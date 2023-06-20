@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <form name="formulaire">
+    <form name="formulaire" method="get" action="receiveForm.html">
         <label for="firstname">firstname</label>
         <input name="firstname" type="text" id="firstname">
         <br>
@@ -16,11 +16,13 @@
         <br>
         <label for="postalCode">postalCode</label>
         <input min="1000" max="9999" name="postalCode" type="number" id="postalCode">
+        <br>
+        <input type="submit" onclick="valider()"  value="Valider">
     </form>
     <br>
     <button onclick="autoComplete()">Auto</button> &nbsp;
     <button onclick="reset()">Reset</button>
-    <button onclick="valider()">Valider</button>
+    
 
     <script src="./script.js"></script>
 </body>
