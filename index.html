@@ -10,12 +10,17 @@
     <form name="formulaire">
         <label for="firstname">firstname</label>
         <input name="firstname" type="text" id="firstname">
+        <br>
         <label for="lastname">lastname</label>
         <input name="lastname" type="text" id="lastname">
+        <br>
+        <label for="postalCode">postalCode</label>
+        <input min="1000" max="9999" name="postalCode" type="number" id="postalCode">
     </form>
     <br>
     <button onclick="autoComplete()">Auto</button> &nbsp;
     <button onclick="reset()">Reset</button>
+    <button onclick="valider()">Valider</button>
 
     <script src="./script.js"></script>
 </body>
