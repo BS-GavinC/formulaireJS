@@ -1,23 +1,34 @@
-let autoComplete = () => {
-    formulaire.lastname.value = "Dupont";
-    formulaire.firstname.value = "Jean";
+
+let user = JSON.parse(localStorage.getItem("user"))  ?? null
+if(user){
+    document.getElementById("infos").innerHTML = `${user.nom} ${user.prenom}`
+    document.getElementById("register").hidden = true
+}
+else{
+    document.getElementById("disconnect").hidden = true
 }
 
-let reset = () => {
-    formulaire.reset()
+
+let add = () => {
+
+    let newUser = {
+        nom : formz.nom.value,
+        prenom : formz.prenom.value    
+    }
+
+    localStorage.setItem("user", JSON.stringify(newUser) )
+
+    window.location.href = 'index.html'
+
+    document.getElementById("disconnect").hidden = false
+    document.getElementById("register").hidden = true
+    
 }
 
-let valider = () => {
-    if (!formulaire.firstname.value) {
-        alert("prenom invalide !")
-    }
-    else if(!formulaire.lastname.value){
-        alert("nom de famille invalide !")
-    }
-    else if(!(formulaire.postalCode.value > 1000 && formulaire.postalCode.value < 9999)){
-        alert("Code postal invalide !")
-    }
-    else{
-        alert("Formulaire validé !")
-    }
+let disco = () => {
+    localStorage.clear()
+    window.location.href = 'index.html'
+    document.getElementById("disconnect").hidden = true
+    document.getElementById("register").hidden = false
 }
+

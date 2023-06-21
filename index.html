@@ -6,24 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <form name="formulaire" method="get" action="receiveForm.html">
-        <label for="firstname">firstname</label>
-        <input name="firstname" type="text" id="firstname">
-        <br>
-        <label for="lastname">lastname</label>
-        <input name="lastname" type="text" id="lastname">
-        <br>
-        <label for="postalCode">postalCode</label>
-        <input min="1000" max="9999" name="postalCode" type="number" id="postalCode">
-        <br>
-        <input type="submit" onclick="valider()"  value="Valider">
-    </form>
+    <p id="infos"></p>
+    <div id="register">
+        <form name="formz">
+                <p>Nom</p>
+                <input type="text" name="nom">
+                <p>Prenom</p>
+                <input type="text" name="prenom">
+                <button type="button" onclick="add()">OK</button>
+            </form>
+    </div>
     <br>
-    <button onclick="autoComplete()">Auto</button> &nbsp;
-    <button onclick="reset()">Reset</button>
-    
+    <div id="disconnect">
+            <button onclick="disco()">Disconnect</button>
+    </div>
 
+    
     <script src="./script.js"></script>
 </body>
 </html>
